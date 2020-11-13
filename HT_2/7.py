@@ -15,11 +15,9 @@ def calc(a, b, operation):
 			return a/b
 	
 	
-print('enter first digital:')
-a = int(input())
-print('enter operation with digitals:')
-operation = input()
-print('enter second digita:')
-b = int(input())
+
+a = int(input('enter first digital:'))
+operation = input('enter operation with digitals:')
+b = int(input('enter second digita:'))
 
 print(calc(a, b, operation))
