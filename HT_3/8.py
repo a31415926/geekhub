@@ -6,7 +6,6 @@
        fnc([1, 2, 3, 4, 5], shift=-2) --> [3, 4, 5, 1, 2]
 	   """
 	   
-	   
 
 def func_name(lst, shift):
 	res = []
