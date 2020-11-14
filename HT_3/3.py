@@ -2,8 +2,11 @@
 
 def is_prime(n):
 	d = 2
+	#проверяем, чтобы не было бесконечного цикла
 	if n == 1:
 		return True
+	if n<=0:
+		return False
 	while n%d != 0:
 		d+=1
 	res = True if (d==n) else False
