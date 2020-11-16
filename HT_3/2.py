@@ -15,6 +15,10 @@ def bank(a, year, percents = 10):
 	
 balance = float(input('Сумма:'))
 year = int(input('На сколько лет:'))
-per = float(input('Проценты:'))
+try:
+	per = float(input('Проценты:'))
+
+except ValueError:
+	per = 10
 
 bank(balance, year, per)
