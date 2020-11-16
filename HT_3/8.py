@@ -9,6 +9,8 @@
 
 def func_name(lst, shift):
 	res = []
+	if shift > len(lst):
+		shift = shift - len(lst)*(shift//len(lst))
 	for i in range(-shift, len(lst)-shift):
 		if i >= len(lst):
 			res.append(lst[i-len(lst)])
@@ -21,6 +23,8 @@ def func_name1(lst, shift):
 	""" 
 	рабочий однострочный вариант, но менее читабельный
 	[lst.insert(0, lst.pop()) for i in range(shift)] if shift>0 else [lst.append(lst.pop(0)) for i in range(-shift)]"""	
+	if shift > len(lst):
+		shift = shift - len(lst)*(shift//len(lst))
 	if shift>0:
 		[lst.insert(0, lst.pop()) for i in range(shift)]
 	else:
