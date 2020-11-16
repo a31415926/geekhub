@@ -18,14 +18,14 @@ def func_name(lst, shift):
 		
 
 def func_name1(lst, shift):
+	""" 
+	рабочий однострочный вариант, но менее читабельный
+	[lst.insert(0, lst.pop()) for i in range(shift)] if shift>0 else [lst.append(lst.pop(0)) for i in range(-shift)]"""	
 	if shift>0:
-		for i in range(shift):
-			a = lst.pop()
-			lst.insert(0, a)
+		[lst.insert(0, lst.pop()) for i in range(shift)]
 	else:
-		for i in range(-shift):
-			a = lst.pop(0)
-			lst.append(a)		
+		[lst.append(lst.pop(0)) for i in range(-shift)]	
+	
 	return lst
 		
 fnc = [1, 2, 3, 4, 5, 6, 7]
