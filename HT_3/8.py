@@ -16,7 +16,20 @@ def func_name(lst, shift):
 			res.append(lst[i])
 	return res
 		
+
+def func_name1(lst, shift):
+	if shift>0:
+		for i in range(shift):
+			a = lst.pop()
+			lst.insert(0, a)
+	else:
+		for i in range(-shift):
+			a = lst.pop(0)
+			lst.append(a)		
+	return lst
+		
 fnc = [1, 2, 3, 4, 5, 6, 7]
 sh = int(input('На сколько нужно переместить:'))
 
 print(func_name(fnc, sh))
+print(func_name1(fnc, sh))
