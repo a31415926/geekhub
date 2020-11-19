@@ -2,27 +2,6 @@
    P.S. Повинен вертатись генератор.
    P.P.S. Для повного розуміння цієї функції - можна почитати документацію по ній: https://docs.python.org/3/library/stdtypes.html#range"""
    
-"""
-def custom_range(stop, start = 0, step = 1):
-	lst = []
-	if start != 0:
-		while stop!=start:
-			yield stop
-			stop += step
-	else:
-		while stop!=start:
-			yield start
-			start += step
-			
-	
-		
-#примеры:
-
-
-for i in custom_range(40, 20):
-	print(i)
-"""
-
 def custom_range(stop, start = 0, step = 1):
 	lst = []
 	if step == 0:
