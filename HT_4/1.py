@@ -15,21 +15,16 @@ def check_user_and_pass(username, password, silent = False):
 	data_users = [{'username':'ivan', 'password':'pass1'}, {'username':'petr',  'password':'123456'}, 
             {'username':'oleg', 'password':'qwerty'}, {'username':'nikita', 'password':'asdewq'}, {'username':'igor', 'password':'zxcvbn'}]
 	
-	try:
-		for i in range(len(data_users)):
-			if data_users[i]['username'] == username and data_users[i]['password'] == password:
-				return True
-				break
-		else:
-			if not silent:
-				raise LoginException()
-			else:
-				return False
-	except KeyError:
-		if silent:
-			return False
-		else:
+	
+	for i in range(len(data_users)):
+		if data_users[i]['username'] == username and data_users[i]['password'] == password:
+			return True
+			break
+	else:
+		if not silent:
 			raise LoginException()
+		else:
+			return False
 		
 		
 assert check_user_and_pass('petr', '123456'), 'petr-123456'
