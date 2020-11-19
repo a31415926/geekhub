@@ -32,4 +32,5 @@ def check_user_and_pass(username, password, silent = False):
 			raise LoginException()
 		
 		
-print(check_user_and_pass('oleg','qw54erty', True))
+assert check_user_and_pass('petr', '123456'), 'petr-123456'
+assert check_user_and_pass('oleg','asd', True)==False, 'oleg - asd'
