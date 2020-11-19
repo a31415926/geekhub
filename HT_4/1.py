@@ -12,19 +12,21 @@ class LoginException(Exception):
 	
 
 def check_user_and_pass(username, password, silent = False):
-	data_users = {'ivan':'pass1', 'petr':'123456', 'oleg':'qwerty', 'nikita':'asdewq', 'igor':'zxcvbn'}
+	data_users = [{'ivan':'pass1', 'petr':'123456', 'oleg':'qwerty', 'nikita':'asdewq', 'igor':'zxcvbn'}]
 	
 	try:
-		if data_users[username] == password:
+		if data_users[0][username] == password:
 			return True
 		else:
-			raise LoginException()
+			if not silent:
+				raise LoginException()
+			else:
+				return False
 	except KeyError:
 		if silent:
 			return False
 		else:
 			raise LoginException()
-	except LoginException:
-		pass
 		
 		
+print(check_user_and_pass('ivasdn','passas1', True))
