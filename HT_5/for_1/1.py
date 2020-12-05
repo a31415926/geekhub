@@ -91,7 +91,7 @@ def check_exists_user(login):
 
 
 def change_password(login):
-	cur_pass = input('Введи текущий пароль: ')
+	cur_pass = input('Введи текущий пароль')
 	with open(fr'{path}\users.json') as f:
 		dump_users = json.load(f)
 	if cur_pass == dump_users[login]["password"]:
@@ -220,7 +220,7 @@ def input_for_auth():
 		password = input('Введи пароль: ')
 		if auth_users(login, password):
 			break
-		print('Неверный логин/пароль')
+		print('No!')
 		count += 1
 	else:
 		print('Ты исчерпал свои попытки. Прощай.')
