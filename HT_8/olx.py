@@ -73,7 +73,6 @@ def parse_board(link_cat):
             #если попали под 403, ждем немного и идем дальше
             if req_phone.status_code == 403:
                 time.sleep(100)
-                print(link_entry.get('href'))
                 req_phone = session.get('https://www.olx.ua/ajax/misc/contact/phone/'+token_id+'/?pt='+token_res[0], headers = headers)
             
             req_phone_json = req_phone.json()
