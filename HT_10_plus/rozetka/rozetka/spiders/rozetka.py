@@ -55,7 +55,7 @@ class RozetkaSpider(scrapy.Spider):
             item['link'] = good['href']
             item['title'] = good['title']
             item['brand'] = good['brand']
-            item['images'] = ','.join(good['images']['all_images'])
+            item['images'] = '|'.join(good['images']['all_images'])
             item['price'] = good['price']
             item['old_price'] = good['old_price']
             yield item
